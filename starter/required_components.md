@@ -28,20 +28,19 @@ end.
 - Screenshot or paste of the real Job/Workflow run, showing your
   notebook as a real task and a real successful run:
 
-## 4. Security review
+## 4. Pipeline, compute, and cloud deployment (written)
 
-- The real issue(s) you found in the given `Dockerfile`, and your real
-  fix for each:
-- The real over-permissive setting you found in
-  `sample_s3_policy.json`, and your real fixed policy:
+A real, written explanation — not a service-name checklist:
 
-## 5. The one-page cloud comparison
+- Describe your real pipeline and your real compute choices (why
+  Spark, what the bronze/silver/gold split actually buys you here):
+- If this ran in production on a real cloud (Databricks itself runs on
+  AWS, Azure, or GCP underneath), what would actually need to change
+  or be considered — storage, compute scaling/cost, and security
+  (access control, encryption, network exposure)? Be specific to
+  *your* pipeline, not a generic answer:
 
-- Link to (or confirm inline in) `cloud_comparison_matrix.md` — filled
-  in for real, every service name checked against that provider's own
-  current docs:
-
-## 6. Architecture at 10x scale
+## 5. Architecture at 10x scale
 
 - Your real architecture description/diagram, and the real, specific
   component you identified as the first bottleneck under 10x data

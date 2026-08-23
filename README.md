@@ -40,10 +40,10 @@ quota-shutdown risk to plan around.
 ## What to do
 
 - `starter/pyspark_job.py` is a **given, real, upload-ready Databricks
-  notebook** — real structure (extract/transform/load-to-Delta cells),
-  the actual logic left as `TODO`/`NotImplementedError`. Following it is
-  the guided rep; your real, independent project needs more than
-  filling in these TODOs (see `MVP.md`).
+  notebook** — real structure (bronze/silver/gold cells), the actual
+  logic left as `TODO`/`NotImplementedError`. Following it is the
+  guided rep; your real, independent project needs more than filling
+  in these TODOs (see `MVP.md`).
 - Build the real pipeline as a real **3-layer medallion architecture**
   (bronze/silver/gold — Databricks' own current terminology): bronze
   holds your real raw data unmodified; silver applies real cleanup/
@@ -54,10 +54,10 @@ quota-shutdown risk to plan around.
   **gold** table — not just a Delta write.
 - Wire your notebook into a real **Databricks Workflow** and trigger a
   real run from there.
-- Review `starter/Dockerfile` and `starter/sample_s3_policy.json` — each
-  has a real, findable issue. Fix both.
-- Fill in `starter/cloud_comparison_matrix.md` for real, checking every
-  service name against that provider's own current docs.
+- Write a real explanation of your pipeline, your compute choices, and
+  what would actually need to change (storage, scaling, security) if
+  this ran in production on a real cloud — see
+  `starter/required_components.md` Section 4.
 - Fill in `starter/required_components.md` as you go.
 
 `CHECKLIST_TIMELINE.md` has the suggested day-by-day pace and the full

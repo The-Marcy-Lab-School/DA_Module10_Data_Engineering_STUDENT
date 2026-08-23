@@ -3,23 +3,20 @@
 ## The objective
 
 Build a real, end-to-end **PySpark job on Databricks** that reads a
-large real dataset (millions of real rows), writes it into a **Delta
-Lake table in your real Unity Catalog**, performs a real aggregation
-across the **full** dataset (not a sample), and runs as a real
-**Databricks Workflow** — plus a real, one-page written comparison of
-how the same architecture would deploy on AWS, Azure, and GCP,
-including a real, specific security consideration.
+large real dataset (millions of real rows), writes it into a real
+**3-layer bronze/silver/gold Delta Lake pipeline in your real Unity
+Catalog**, performs a real aggregation across the **full** dataset (not
+a sample), and runs as a real **Databricks Workflow** — plus a real,
+written explanation of your pipeline, your compute choices, and what
+would actually change if this ran in production on a real cloud.
 
 ## Why it matters
 
 Every project so far has run on a single machine. This is the first
 time "the data is too big for one computer" is real, not hypothetical —
 Spark's whole design exists because a single-threaded script genuinely
-can't process this at scale. It's also your first real exposure to how
-the same architecture looks across the three major cloud providers, and
-your first real container/storage **security review** — a Dockerfile
-and an S3 policy that look fine at a glance, with real issues underneath.
-**Module 15's capstone** reuses `databricks` directly.
+can't process this at scale. **Module 15's capstone** reuses
+`databricks` directly.
 
 ## Deliverables at a glance
 
@@ -33,11 +30,9 @@ and an S3 policy that look fine at a glance, with real issues underneath.
   prior version queried via time-travel.
 - Your real PySpark notebook wired into and run as a real **Databricks
   Workflow** (Job).
-- A real, current, one-page cloud-comparison writeup — every service
-  name checked against that provider's own current docs.
-- The given `Dockerfile`'s real security issue(s) found and fixed; the
-  given `sample_s3_policy.json`'s real over-permissive setting found
-  and fixed.
+- A real, written explanation of your pipeline/compute and how it
+  would actually run in production on a real cloud, including a real
+  security consideration.
 - A real, written 10x-data-growth bottleneck analysis.
 
 ## Skills you'll practice
@@ -49,12 +44,9 @@ and an S3 policy that look fine at a glance, with real issues underneath.
   10x scale.
 - **Delta Lake / Data Lake** — real ACID guarantees and time-travel,
   demonstrated, not just described.
-- **AWS / Azure / GCP** — real, current service-name literacy across
-  all three, at a comparative depth (not deep mastery of any one).
-- **Docker / Cybersecurity / S3** — a real container and real
-  storage-policy security review, each with a real fix.
 - **Cloud Architecture** — describing/evaluating a real
-  storage/compute architecture under real growth pressure.
+  storage/compute architecture under real growth pressure, and
+  reasoning about what a real cloud deployment would need.
 
 ## Timeline
 
