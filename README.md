@@ -44,11 +44,14 @@ quota-shutdown risk to plan around.
   the actual logic left as `TODO`/`NotImplementedError`. Following it is
   the guided rep; your real, independent project needs more than
   filling in these TODOs (see `MVP.md`).
-- Build the real pipeline: read your real dataset (see `SCENARIOS.md`),
-  aggregate across the **full** dataset, write into your real Unity
+- Build the real pipeline as a real **3-layer medallion architecture**
+  (bronze/silver/gold — Databricks' own current terminology): bronze
+  holds your real raw data unmodified; silver applies real cleanup/
+  validation; gold is your real, full-dataset aggregation (see
+  `SCENARIOS.md` for your dataset). All three land in your real Unity
   Catalog Workspace catalog.
-- Demonstrate a real Delta update and a real time-travel query — not
-  just a Delta write.
+- Demonstrate a real Delta update and a real time-travel query on your
+  **gold** table — not just a Delta write.
 - Wire your notebook into a real **Databricks Workflow** and trigger a
   real run from there.
 - Review `starter/Dockerfile` and `starter/sample_s3_policy.json` — each

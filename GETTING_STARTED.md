@@ -30,9 +30,9 @@ current docs):
 Every Databricks workspace created after November 2023 has Unity
 Catalog on by default, and every new workspace gets a real, automatic
 **"Workspace catalog"** every user already has access to — no admin
-privileges needed. Your real Delta table should land in
-`workspace.default.<your_table_name>` (or a schema of your own choosing
-under `workspace`), not a bare, catalog-less Delta path.
+privileges needed. Your real bronze, silver, and gold tables should
+each land in `workspace.default.<table_name>` (or a schema of your own
+choosing under `workspace`), not bare, catalog-less Delta paths.
 
 ## Step 3: Import the given notebook
 
