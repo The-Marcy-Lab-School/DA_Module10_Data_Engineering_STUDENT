@@ -7,26 +7,39 @@ shared it — this is the same bar in checklist form.
 ## The pipeline
 
 - [ ] A real PySpark job, run on Databricks Free Edition, that reads
-      your real, chosen, bounded dataset and performs a real
-      aggregation across the **full** dataset — not a sample
-      (`common_project_mistakes` #1: the most common way to fail this
-      module).
-- [ ] The real full-dataset aggregate result **cross-checked against a
-      real small local pandas hand-computation** for at least one real
-      slice — matching exactly.
+      your real, chosen, bounded dataset — every real row processed,
+      not a sample (`common_project_mistakes` #1: the most common way
+      to fail this module).
+- [ ] The real full-dataset aggregate result (your **gold** layer,
+      below) **cross-checked against a real small local pandas
+      hand-computation** for at least one real slice — matching
+      exactly.
 - [ ] Correctly explains (in `required_components.md`) why this
       workload needs Spark's distributed, partition-based execution —
       not just "it's big data" as an unexamined buzzword.
 
-## Delta Lake and Unity Catalog — both real, both demonstrated
+## A real 3-layer medallion architecture (bronze/silver/gold)
 
-- [ ] The real output written as a real Delta table, in your real
-      Unity Catalog **Workspace catalog** (`workspace.default.<table>`
-      or your own schema) — not a bare, catalog-less Delta path.
-- [ ] A real update applied to the table, and a real time-travel query
-      that successfully returns the pre-update version — an
-      unexercised "I used Delta Lake" claim with no real ACID/versioning
-      feature shown is `common_project_mistakes` #2.
+Databricks' own current terminology for a real multi-hop pipeline —
+not just one Delta table, three, each a real, distinct step:
+
+- [ ] **Bronze**: your real raw data, written unmodified into a real
+      Delta table — preserves original fidelity, no cleanup yet.
+- [ ] **Silver**: a real, cleaned/validated Delta table, built from
+      bronze — real deduplication/type-enforcement/null-handling
+      decisions, made and explained (not silently defaulted).
+- [ ] **Gold**: your real, business-ready aggregation across the
+      **full** dataset (not a sample), built from silver — the layer a
+      real stakeholder would actually query.
+- [ ] All three tables written into your real Unity Catalog
+      **Workspace catalog** (`workspace.default.<table>` or your own
+      schema) — not bare, catalog-less Delta paths.
+- [ ] A real update applied to your **gold** table, changing a real
+      value (not a no-op — pick something that's genuinely different
+      before vs. after), and a real time-travel query that successfully
+      returns the real pre-update version — an unexercised "I used
+      Delta Lake" claim with no real ACID/versioning feature shown is
+      `common_project_mistakes` #2.
 
 ## The real Databricks Workflow
 
