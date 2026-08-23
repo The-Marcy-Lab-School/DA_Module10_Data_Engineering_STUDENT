@@ -27,8 +27,10 @@ and an S3 policy that look fine at a glance, with real issues underneath.
   real current free tier — the name changed from "Community Edition,"
   which was retired in 2025; see `GETTING_STARTED.md`), reading your
   real dataset end to end, not a truncated sample.
-- A real Delta Lake table in your real Unity Catalog workspace catalog
-  — a real update applied, a real prior version queried via time-travel.
+- A real **3-layer medallion architecture** (bronze/silver/gold —
+  Databricks' own current terminology) in your real Unity Catalog
+  workspace catalog — a real update applied to your gold table, a real
+  prior version queried via time-travel.
 - Your real PySpark notebook wired into and run as a real **Databricks
   Workflow** (Job).
 - A real, current, one-page cloud-comparison writeup — every service
