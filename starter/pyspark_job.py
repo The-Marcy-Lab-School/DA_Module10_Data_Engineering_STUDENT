@@ -5,11 +5,12 @@
 # ../MVP.md), so don't just fill in these TODOs and call the project
 # done.
 #
-# Real, verified pattern (this exact shape -- read CSV(s), aggregate at
-# scale, write Delta into your Workspace catalog -- was built and run
-# for real against 3 real years of BTS On-Time Performance data before
-# this template was written; see ../../../instructor/solution/ if
-# you're the instructor reading this).
+# Real, verified pattern (this exact shape -- a real 3-layer medallion
+# architecture, bronze -> silver -> gold, each a real Delta table in
+# your Workspace catalog -- was built and run for real against 3 real
+# years of BTS On-Time Performance data before this template was
+# written; see ../../../instructor/solution/ if you're the instructor
+# reading this).
 #
 # HOW TO USE THIS FILE: this is a real Databricks notebook in its
 # plain-text "source" format (the "# Databricks notebook source" line
@@ -27,45 +28,61 @@
 RAW_PATH = "/Volumes/workspace/default/raw/*.csv"  # TODO: your real path
 CATALOG = "workspace"      # Free Edition's real default catalog
 SCHEMA = "default"         # TODO: consider a real schema of your own
-TABLE_NAME = "TODO_your_table_name"
+BRONZE_TABLE = "TODO_bronze_table_name"
+SILVER_TABLE = "TODO_silver_table_name"
+GOLD_TABLE = "TODO_gold_table_name"
 
 # COMMAND ----------
 
-# EXTRACT: TODO -- read your real raw data for real.
-# Real gotcha, confirmed while building this: inferSchema is fine at
-# this scale, but check a few columns after reading -- BTS's own delay
-# columns are real, genuine floats with real nulls (a cancelled flight
-# has no arrival delay), not something to silently coerce to 0 without
-# deciding whether that's actually the right call for your aggregation.
-raise NotImplementedError("TODO: implement extract -- read RAW_PATH for real")
+# BRONZE: raw, unvalidated ingestion -- real, current Databricks
+# terminology for the first layer of a real "medallion architecture"
+# (bronze -> silver -> gold). Preserve original fidelity here; real
+# cleanup belongs in silver, not bronze.
+#
+# TODO -- read your real raw data for real, and write it, unmodified,
+# into a real bronze Delta table in your Workspace catalog.
+raise NotImplementedError("TODO: implement bronze -- read RAW_PATH, write unmodified to a real Delta table")
 
 # COMMAND ----------
 
-# TRANSFORM: TODO -- a real aggregation across the FULL dataset, not a
-# sample (common_project_mistakes' #1 real trap). Before you trust the
-# Spark result: compute the same real number by hand against a small
-# local pandas slice first (exemplar_guidance's own instruction), then
-# confirm your Spark aggregate matches it exactly for that slice.
-raise NotImplementedError("TODO: implement transform -- a real groupBy/agg at full scale")
+# SILVER: real cleanup and validation. Real gotcha, confirmed while
+# building this: BTS's own delay columns are real, genuine floats with
+# real nulls (a cancelled flight has no arrival delay) -- decide for
+# real whether to drop, filter, or coalesce those rows, and say why in
+# required_components.md. Deduplicate and enforce real types here too.
+#
+# TODO -- read from your real bronze table, clean it for real, write a
+# real silver Delta table.
+raise NotImplementedError("TODO: implement silver -- real cleanup/validation, reading from bronze")
 
 # COMMAND ----------
 
-# LOAD: TODO -- write into your real Unity Catalog table, not a bare
-# Delta path. Free Edition gives every workspace a real "workspace"
-# catalog with a "default" schema you already have access to, no admin
-# needed -- confirm this is real for your own account before assuming
-# it (Databricks' own docs, checked live while building this template,
+# GOLD: a real aggregation across the FULL dataset, not a sample
+# (common_project_mistakes' #1 real trap) -- business-ready, the layer
+# a real dashboard or stakeholder would actually query. Before you
+# trust the Spark result: compute the same real number by hand against
+# a small local pandas slice first (exemplar_guidance's own
+# instruction), then confirm your Spark aggregate matches it exactly.
+#
+# TODO -- read from your real silver table, aggregate for real, write
+# into your real Unity Catalog gold table (not a bare Delta path).
+# Free Edition gives every workspace a real "workspace" catalog with a
+# "default" schema you already have access to, no admin needed --
+# confirm this is real for your own account before assuming it
+# (Databricks' own docs, checked live while building this template,
 # confirm it's automatic for any workspace created after Nov 2023).
 raise NotImplementedError(
-    f"TODO: implement load -- df.write.format('delta').saveAsTable('{CATALOG}.{SCHEMA}.{TABLE_NAME}')"
+    f"TODO: implement gold -- df.write.format('delta').saveAsTable('{CATALOG}.{SCHEMA}.{GOLD_TABLE}')"
 )
 
 # COMMAND ----------
 
 # TODO (required, not optional): demonstrate a real Delta update AND a
-# real time-travel query back to the version before it -- an
-# unexercised "Delta Lake" claim with no real ACID/versioning feature
-# shown is common_project_mistakes' #2 real trap. See
+# real time-travel query back to the version before it, on your real
+# gold table -- an unexercised "Delta Lake" claim with no real
+# ACID/versioning feature shown is common_project_mistakes' #2 real
+# trap. Pick an update that actually changes a real value (not a
+# no-op) so your before/after is genuinely different. See
 # required_components.md Section 2.
 
 # COMMAND ----------

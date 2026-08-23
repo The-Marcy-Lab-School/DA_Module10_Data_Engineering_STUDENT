@@ -54,6 +54,10 @@ compute engine) on Day 1 is expected, not falling behind.
       evidence.
 - [ ] Commit and push.
 
+**Heads-up**: a real share-out session runs after this project is due —
+you'll walk a small group through your actual running Workflow. Nothing
+to prepare in advance beyond the real project itself.
+
 ## Submission checklist
 
 - [ ] A real PySpark job, run on Databricks Free Edition against the
