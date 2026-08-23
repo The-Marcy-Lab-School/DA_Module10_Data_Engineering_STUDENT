@@ -47,24 +47,18 @@ not just one Delta table, three, each a real, distinct step:
       successful run triggered from there — not just cells run in order
       in the notebook editor.
 
-## Security review — both real issues found and fixed
+## Pipeline, compute, and cloud deployment — a real, written explanation
 
-- [ ] The real issue(s) in the given `Dockerfile` correctly identified
-      (not invented) and a real, concrete fix proposed for each.
-- [ ] The real over-permissive setting in the given
-      `sample_s3_policy.json` correctly identified and a real, corrected
-      policy proposed.
-
-## The cloud comparison — real, current, specific
-
-- [ ] `cloud_comparison_matrix.md` filled in for real; ≥3 services
-      correctly mapped across all three providers for your stated
-      workload, checked against each provider's **current** docs — not
-      memory or an unverified AI summary (`common_project_mistakes` #3).
-- [ ] ≥1 real, non-obvious difference between the three providers named,
-      specific to this workload.
-- [ ] ≥1 real, specific security consideration identified for deploying
-      this architecture on a real cloud provider.
+- [ ] `required_components.md` Section 4 filled in for real: your
+      pipeline and compute choices explained (why Spark, what
+      bronze/silver/gold actually buys you), specific to *your*
+      project — not a generic answer.
+- [ ] A real, specific explanation of what would need to change
+      (storage, compute scaling/cost, security) if this ran in
+      production on a real cloud.
+- [ ] ≥1 real, specific security consideration identified — access
+      control, encryption, or network exposure, grounded in your own
+      real pipeline.
 
 ## Architecture at scale
 
@@ -77,7 +71,7 @@ not just one Delta table, three, each a real, distinct step:
   run against the full dataset.
 - Delta Lake used, but no real ACID/time-travel feature ever
   demonstrated.
-- The cloud comparison uses outdated or invented service names instead
-  of checking current documentation.
-- A Dockerfile left running as root, or with secrets hardcoded in, with
-  neither issue identified.
+- The cloud-deployment writeup is generic ("you'd use cloud storage")
+  instead of specific to your own real pipeline.
+- No real security consideration named, or one that isn't actually
+  grounded in how your pipeline would really run.

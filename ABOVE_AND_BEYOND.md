@@ -19,16 +19,9 @@ ranking) at real scale.
 
 ## Real deployment to one real free-tier cloud service
 
-The base deliverable only requires reading each provider's docs, not
-deploying anything real. Go one step further: actually upload your real
-Delta output's Parquet files to a real S3 (or Blob Storage / Cloud
-Storage) free-tier bucket, and write up what was actually easy vs.
-actually annoying about it — grounded in what you really did, not a
+The base deliverable only requires a written explanation, not deploying
+anything real. Go one step further: actually upload your real gold
+layer's Parquet files to a real S3 (or Blob Storage / Cloud Storage)
+free-tier bucket, and write up what was actually easy vs. actually
+annoying about it — grounded in what you really did, not a
 hypothetical.
-
-## A deeper Dockerfile hardening pass
-
-Beyond the single required fix: a real multi-stage build, a real
-minimal base image (not `latest`), and a real non-root `USER` — show
-the real, smaller final image size as evidence, not just the Dockerfile
-text.
