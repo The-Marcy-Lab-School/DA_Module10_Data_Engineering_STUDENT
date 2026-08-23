@@ -1,94 +1,52 @@
 # Databricks notebook source
-# GIVEN TEMPLATE -- real structure, real TODOs. This mirrors objective 1's
-# own "following a template notebook" guided rep -- the independent
-# project itself asks you to build this without a template (see
-# ../MVP.md), so don't just fill in these TODOs and call the project
-# done.
+# GIVEN TEMPLATE. Real structure, real TODOs -- fill these in, but your
+# actual independent project (see MVP.md) needs more than this.
 #
-# Real, verified pattern (this exact shape -- a real 3-layer medallion
-# architecture, bronze -> silver -> gold, each a real Delta table in
-# your Workspace catalog -- was built and run for real against 3 real
-# years of BTS On-Time Performance data before this template was
-# written; see ../../../instructor/solution/ if you're the instructor
-# reading this).
-#
-# HOW TO USE THIS FILE: this is a real Databricks notebook in its
-# plain-text "source" format (the "# Databricks notebook source" line
-# above is not a comment for you to delete -- it's what makes Databricks
-# recognize this as a notebook). In your Databricks workspace:
-# Workspace -> Import -> upload this file directly. Each
-# "# COMMAND ----------" line below becomes its own real notebook cell.
+# This is a real Databricks notebook in plain-text "source" format.
+# In your workspace: Workspace -> Import -> upload this file directly.
+# Each "# COMMAND ----------" line becomes its own real notebook cell.
 
 # COMMAND ----------
 
-# TODO: pick your own real data window -- 3 real years is enough to
-# need real distributed processing without tripping Databricks Free
-# Edition's quota (see ../GETTING_STARTED.md). Point this at wherever
-# you've staged your own real, chosen dataset.
-RAW_PATH = "/Volumes/workspace/default/raw/*.csv"  # TODO: your real path
-CATALOG = "workspace"      # Free Edition's real default catalog
-SCHEMA = "default"         # TODO: consider a real schema of your own
+# TODO: point this at your own real, chosen dataset. Bound it to a
+# real window (see GETTING_STARTED.md) so a full run doesn't trip
+# Databricks Free Edition's quota.
+RAW_PATH = "/Volumes/workspace/default/raw/*.csv"  # TODO
+CATALOG = "workspace"
+SCHEMA = "default"
 BRONZE_TABLE = "TODO_bronze_table_name"
 SILVER_TABLE = "TODO_silver_table_name"
 GOLD_TABLE = "TODO_gold_table_name"
 
 # COMMAND ----------
 
-# BRONZE: raw, unvalidated ingestion -- real, current Databricks
-# terminology for the first layer of a real "medallion architecture"
-# (bronze -> silver -> gold). Preserve original fidelity here; real
-# cleanup belongs in silver, not bronze.
-#
-# TODO -- read your real raw data for real, and write it, unmodified,
-# into a real bronze Delta table in your Workspace catalog.
-raise NotImplementedError("TODO: implement bronze -- read RAW_PATH, write unmodified to a real Delta table")
+# BRONZE: raw data, unmodified. No cleanup here -- that's silver's job.
+raise NotImplementedError("TODO: read RAW_PATH, write unmodified to a real bronze Delta table")
 
 # COMMAND ----------
 
-# SILVER: real cleanup and validation. Real gotcha, confirmed while
-# building this: BTS's own delay columns are real, genuine floats with
-# real nulls (a cancelled flight has no arrival delay) -- decide for
-# real whether to drop, filter, or coalesce those rows, and say why in
-# required_components.md. Deduplicate and enforce real types here too.
-#
-# TODO -- read from your real bronze table, clean it for real, write a
-# real silver Delta table.
-raise NotImplementedError("TODO: implement silver -- real cleanup/validation, reading from bronze")
+# SILVER: real cleanup/validation, reading FROM bronze. Decide for real
+# how to handle nulls (e.g. a cancelled flight has no arrival delay)
+# and say why in required_components.md.
+raise NotImplementedError("TODO: read from bronze, clean it for real, write a real silver Delta table")
 
 # COMMAND ----------
 
-# GOLD: a real aggregation across the FULL dataset, not a sample
-# (common_project_mistakes' #1 real trap) -- business-ready, the layer
-# a real dashboard or stakeholder would actually query. Before you
-# trust the Spark result: compute the same real number by hand against
-# a small local pandas slice first (exemplar_guidance's own
-# instruction), then confirm your Spark aggregate matches it exactly.
-#
-# TODO -- read from your real silver table, aggregate for real, write
-# into your real Unity Catalog gold table (not a bare Delta path).
-# Free Edition gives every workspace a real "workspace" catalog with a
-# "default" schema you already have access to, no admin needed --
-# confirm this is real for your own account before assuming it
-# (Databricks' own docs, checked live while building this template,
-# confirm it's automatic for any workspace created after Nov 2023).
+# GOLD: a real aggregation across the FULL silver dataset, not a
+# sample. Cross-check the result against a small local pandas
+# hand-computation before trusting it.
 raise NotImplementedError(
-    f"TODO: implement gold -- df.write.format('delta').saveAsTable('{CATALOG}.{SCHEMA}.{GOLD_TABLE}')"
+    f"TODO: read from silver, aggregate, write to '{CATALOG}.{SCHEMA}.{GOLD_TABLE}'"
 )
 
 # COMMAND ----------
 
-# TODO (required, not optional): demonstrate a real Delta update AND a
-# real time-travel query back to the version before it, on your real
-# gold table -- an unexercised "Delta Lake" claim with no real
-# ACID/versioning feature shown is common_project_mistakes' #2 real
-# trap. Pick an update that actually changes a real value (not a
-# no-op) so your before/after is genuinely different. See
-# required_components.md Section 2.
+# TODO (required): a real update on your gold table that changes a
+# real value (not a no-op), and a real time-travel query back to the
+# version before it. See required_components.md Section 2.
 
 # COMMAND ----------
 
-# TODO (required): once this notebook runs cleanly end to end, wire it
-# into a real Databricks Workflow (Workflows -> Create Job -> add this
-# notebook as a real task) and trigger a real run from there -- not
-# just "I ran the cells in order once." See required_components.md
+# TODO (required): wire this notebook into a real Databricks Workflow
+# and trigger a real run from there. See required_components.md
 # Section 3.
