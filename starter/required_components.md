@@ -3,18 +3,24 @@
 Fill this in **as you go**, with real evidence — not from memory at the
 end.
 
-## 1. The real pipeline
+## 1. The real pipeline (bronze / silver / gold)
 
 - Your real, chosen dataset (source, real row count, real date range):
-- Real full-dataset run confirmation (not a sample) — paste the real row
-  count your job actually processed:
-- The real small local pandas cross-check you computed by hand, and
-  confirmation it matches your Spark aggregate exactly:
+- **Bronze**: the real table name, and confirmation it holds your raw
+  data unmodified:
+- **Silver**: the real cleanup/validation decisions you made (nulls,
+  dedup, types) and why:
+- **Gold**: real full-dataset run confirmation (not a sample) — paste
+  the real row count your job actually processed:
+- The real small local pandas cross-check you computed by hand against
+  your gold aggregation, and confirmation it matches exactly:
 
 ## 2. Delta Lake, for real
 
-- The real table name (`catalog.schema.table`):
-- The real update you applied (what changed, and why):
+- The real table names (`catalog.schema.table`) for bronze, silver, and
+  gold:
+- The real update you applied to your **gold** table (what changed, and
+  why — a real, different value, not a no-op):
 - The real time-travel query you ran, and its real output (paste it):
 
 ## 3. The real Databricks Workflow
