@@ -62,3 +62,14 @@ to prepare in advance beyond the real project itself.
 - [ ] A real, written pipeline/compute/cloud-deployment explanation,
       with a real, specific security consideration.
 - [ ] A real, written 10x-growth bottleneck analysis.
+- [ ] **Delete `PROJECT_OVERVIEW.md` and `SCENARIOS.md`** — they explain
+      the assignment, not your project; a real portfolio repo shouldn't
+      have "here's what you were asked to build" sitting in it.
+- [ ] **Replace `README.md`'s content with your own real project README**
+      — write it for someone who's never seen this assignment:
+  - **Business Problem** — what your pipeline processes, and why.
+  - **Medallion Architecture Overview** — your real bronze/silver/gold
+    design.
+  - **Key Findings** — what your gold-layer data actually shows.
+  - **Cloud & Compute Reflection** — your real deployment/security/
+    scaling write-up.
