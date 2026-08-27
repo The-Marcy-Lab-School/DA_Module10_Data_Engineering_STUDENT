@@ -24,7 +24,8 @@ compute engine) on Day 1 is expected, not falling behind.
 
 ## Day 4 — Delta Lake, for real
 
-- [ ] A real update applied to your Delta table.
+- [ ] A real update applied to your **gold** Delta table (not bronze or
+      silver — the medallion layers below it stay as originally written).
 - [ ] A real time-travel query, back to the version before the update —
       confirmed it returns the real pre-update data.
 
@@ -41,6 +42,8 @@ compute engine) on Day 1 is expected, not falling behind.
       need to change (storage, scaling, security) running this in
       production on a real cloud.
 - [ ] The real 10x-growth bottleneck analysis written.
+- [ ] `required_components.md` Section 5: a real architecture diagram
+      (or written description) of your actual bronze/silver/gold flow.
 
 ## Day 8 — Finish, submit
 
