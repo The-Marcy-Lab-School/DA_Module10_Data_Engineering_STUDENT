@@ -51,9 +51,16 @@ compute engine) on Day 1 is expected, not falling behind.
       evidence.
 - [ ] Commit and push.
 
-**Heads-up**: a real share-out session runs after this project is due —
-you'll walk a small group through your actual running Workflow. Nothing
-to prepare in advance beyond the real project itself.
+## Day 9 — Share-out
+
+Your instructor schedules this once every submission is in — usually a
+few days after Day 8, not necessarily the next calendar day. Real
+session, not optional: in a small group, you'll walk through your
+actual running Databricks Workflow (your real dataset, your real
+gold-layer aggregation, the one real security issue you found and
+fixed), then field one real question from a peer about a choice you
+made. Have your Workflow run history/notebook ready to share — nothing
+else to prepare — see your instructor for the exact date.
 
 ## Submission checklist
 

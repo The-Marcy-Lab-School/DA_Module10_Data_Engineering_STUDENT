@@ -50,8 +50,9 @@ can't process this at scale. **Module 15's capstone** reuses
 
 ## Timeline
 
-8 days. See `CHECKLIST_TIMELINE.md` for the day-by-day sprint pace and
-the full submission checklist.
+8 days, plus a required share-out session scheduled after. See
+`CHECKLIST_TIMELINE.md` for the day-by-day sprint pace and the full
+submission checklist.
 
 ## Where to start
 
