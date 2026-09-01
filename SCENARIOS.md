@@ -1,7 +1,9 @@
 # Your Real Dataset
 
-Unlike Module 3-8, this project doesn't reuse your own domain — you're
-picking a new, large, real public dataset. Pick one.
+Unlike Modules 3/4/6/7/8/9 (the SQL-through-Data-Engineering run of
+projects that all reuse your own established domain), this project
+doesn't reuse your own domain — you're picking a new, large, real
+public dataset. Pick one.
 
 ## Option 1: BTS On-Time Performance data (recommended default)
 
