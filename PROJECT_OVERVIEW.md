@@ -15,7 +15,7 @@ would actually change if this ran in production on a real cloud.
 Every project so far has run on a single machine. This is the first
 time "the data is too big for one computer" is real, not hypothetical —
 Spark's whole design exists because a single-threaded script genuinely
-can't process this at scale. **Module 15's capstone** reuses
+can't process this at scale. **Module 13's capstone** reuses
 `databricks` directly.
 
 ## Deliverables at a glance
