@@ -56,7 +56,7 @@ deploying it. You'll need:
 - **A real JDK** (PySpark needs a JVM — check with `java -version`
   first; if you don't have one, install a real JDK, e.g. Temurin 17).
 - `pip install pyspark delta-spark` in a dedicated venv (same "don't
-  use a big shared environment" discipline as Module 8's own dbt
+  use a big shared environment" discipline as Module 7's own dbt
   finding).
 
 This is optional — Databricks' own notebook environment already has

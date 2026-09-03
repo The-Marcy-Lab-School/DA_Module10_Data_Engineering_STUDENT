@@ -27,7 +27,7 @@ cd <your-repo-name>
 
 ### Step 3: git setup — already done for you this time
 
-Unlike Module 9, `.gitignore` and `LICENSE` are already here —
+Unlike Module 8, `.gitignore` and `LICENSE` are already here —
 `git-version-control` is a real prerequisite for this module, not
 something newly tested here. Commit as you go, same discipline as
 every prior module.
