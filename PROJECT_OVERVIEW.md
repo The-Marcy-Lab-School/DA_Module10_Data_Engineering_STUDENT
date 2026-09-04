@@ -35,6 +35,10 @@ can't process this at scale. **Module 13's capstone** reuses
   security consideration.
 - A real, written 10x-data-growth bottleneck analysis.
 
+All of the above lives in `starter/required_components.md`, filled in
+as you go with real evidence for each section — not reconstructed from
+memory at the end. See that file for the exact breakdown.
+
 ## Skills you'll practice
 
 - **Databricks / Apache Spark / PySpark** — a real distributed job,
